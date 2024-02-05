@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlightData</title>
+  <title>IFQ714 Assessment 2 - Australian Flight Routes and Airports</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Australian Flight Routes and Airports</h1>
+    <p>Data sourced from <a href="https://openflights.org/data.html">OpenFlights.org</a> and used under the <a href="http://opendatacommons.org/licenses/odbl/1.0/">Open Database License</a>.</p>
+    <hr/>
+
+    <!-- The first part of the page will let us view the flight information. We should be able to filter by source and destination airports, airlines, and whether a particular aircraft is used on them. -->
+    <h2>Flights data</h2>
+
+    <!-- The following div contains the inputs that users can use to filter the list of flights. -->
+    <!-- Your JavaScript code should populate the contents of these select elements. We have provided the default of any.-->
+    <div>
+        <!-- Source airport -->
+        <label for="filter_source_airport">Source airport:
+            <select name="filter_source_airport", id="filterSourceAirportSelect">
+                <option value="any">Any</option>
+            </select>
+        </label>
+        <!-- Destination airport -->
+        <label for="filter_destination_airport">Destination airport:
+            <select name="filter_destination_airport", id="filterDestinationAirportSelect">
+                <option value="any">Any</option>
+            </select>
+        </label>
+        <!-- Airline -->
+        <label for="filter_airline">Airline:
+        <select name="filter_airline", id="filterAirlineSelect">
+            <option value="any">Any</option>
+        </select>
+        </label>
+        <!-- Aircraft -->
+        <label for="filter_aircraft">Aircraft:
+            <select name="filter_aircraft", id="filterAircraftSelect">
+                <option value="any">Any</option>
+            </select>
+        </label>
+        <span id="results-count">Results count:</span>
+
+        <!-- The following div should contain the results of the user's query in the above drop down menus. By default, it should show all flights. -->
+        <!-- If no flights meet the criteria, show a message in the div instead. -->
+        <!-- You should show more than just the properties from the object if you can. For example, the distance between the two airports. -->
+        <!-- If you're feeling adventurous, you could group the flights by the source and destination, and then list all airlines and their aircraft that fly that route. -->
+        <hr/>
+        <div id="flightFilterDisplayDiv">
+            <table id="flight-table">
+                <tr>
+                  <th>Source Airport</th>
+                  <th>Destination Airport</th>
+                  <th>Airline</th>
+                  <th>Aircraft</th>
+                  <th>Distance (km)</th>
+                </tr>
+                <tbody id="flights-table-body"></tbody>
+              </table>
+        </div>
+        <hr/>
+        <!-- The second part of the page will let us view the airport information. We should be able to either filter by city via a drop down list, or search via a text input. -->
+        <h2>Airport data</h2>
+
+        <!-- The following div contains the inputs that users can use to filter the list of flights. -->
+        <!-- Your JavaScript code should populate the contents of the select element. We have provided the default of any.-->
+        <div>
+            <!-- City -->
+            <label for="filter_city">Source airport:
+                <select name="filter_city", id="filterCitySelect">
+                    <option value="any">Any</option>
+                </select>
+            </label>
+        <!-- Search term for airport name -->
+            <label for="filter_search_term">Search term:
+                <input type="text" name="filter_search_term", id="filterSearchTermInput" placeholder="Search inside airport name" style="width:300px"/>
+            </label>
+
+        <!-- The following div should contain the results of the user's query in the above inputs. By default, it should show all airports. -->
+        <!-- If no flights meet the criteria, show a message in the div instead. -->
+        <hr/>
+        <div id="airportFilterDisplayDiv">
+            <table id="airport-table">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>IATA</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Altitude</th>
+                    <th>Time Zone</th>
+                </tr>
+                <tbody id="airports-table-body"></tbody>
+              </table>
+        </div>
+</body>
+<script src="./script.js"></script>
+</html>

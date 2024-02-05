@@ -1,0 +1,74 @@
+/* li {
+  list-style: none;
+} */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+select {
+  max-width: 269px;
+  padding: 3px 0;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  /* font-size: 0.8rem; */
+}
+
+#results-count {
+  padding: 3px 3px 5px 3px;
+  border-radius: 2px;
+  background-color: #F1948A;
+}
+
+#flight-table, #airport-table {
+  min-width: 1450px;
+}
+
+#flights-table-body {
+  font-size: 12px;
+  text-align: center;
+  background-color: #e4f0f5;
+}
+
+#airports-table-body {
+  background-color: #FEF9E7;
+}
+
+#airports-table-body td {
+  padding: 7px;
+}
+
+td,
+th {
+  border: 1px solid black;
+}
+
+th {
+  padding: 10px;
+  background-color: #3f87a6;
+  color: #fff;
+}
+
+td {
+  text-align: center;
+  white-space: normal;
+}
+
+#flight-table td {
+  min-width: 269px;
+}
+
+#airport-table td {
+  min-width: 140px;
+}
+
+tbody {
+  font-size: 12px;
+}
